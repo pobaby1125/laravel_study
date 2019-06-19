@@ -1,0 +1,24 @@
+// 定义
+$primary-color: #333;
+$font-stack:('Helvetica', 'Arial', sans-serif);  //list
+$breakpoints : (
+    small: 767px,
+    medium: 992px,
+    large: 1200px
+);
+
+
+//引用
+body{
+    background: $primary-color;     // 获取 $primary-color 定义的值
+    font:100% nth($font-stack, 1)   // 获取 List 的值，索引从1开始，不是0！
+}
+
+// 变量作为插入变量需要通过 #{} 引入，通过 map_get 函数从 Map 中获取值
+@media(min-width:#{map-get( $breakpoints, small )}){
+    
+}
+
+$name : foo;
+$attr : bottor;
+p.#{$name} { #{$attr}-color: #44b336; }

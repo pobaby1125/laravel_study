@@ -13,6 +13,18 @@
 
 Route::get('/', 'TaskController@dashboard');
 
+Route::get('/welcome', function(){
+    return view('welcome');
+});
+
+Route::prefix('form')->group( function(){
+    Route::get('/', 'PostController@index');
+
+    Route::post('/', 'PostController@form')
+    ->name('form.submit');
+});
+
+
 
 Route::middleware('auth')->group( function(){
     Route::get('/{id}/{name}', function ($id, $name) {
