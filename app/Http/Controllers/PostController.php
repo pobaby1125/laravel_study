@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class PostController extends Controller
 {
-    public function form( Request $request )
+    public function form( \App\Http\Requests\SubmitFormRequest $request )
     {
         //print_r($request->all());
         //print_r($request->only('id'));
@@ -17,12 +18,7 @@ class PostController extends Controller
         //print_r($id);
 
         //print_r($request->segments());
-        $this->validate( $request, [
-            'title' => 'bail|required|string|between:2,32',
-            'url' => 'sometimes|url|max:200'
-           // 'picture' => 'nullable|string'
-        ]);
-
+  
         echo '表单验证通过';
     }
 
