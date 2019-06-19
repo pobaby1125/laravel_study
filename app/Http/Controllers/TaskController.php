@@ -35,6 +35,10 @@ class TaskController extends Controller
         return view('task.home', $arrData);
     }
 
+    public function dashboard(){
+        return view('dashboard',['pageName'=>'Task.dashboard']);
+    }
+
     public function form(){
         $students = 0;
         return view('form', ['students'=>$students]);
