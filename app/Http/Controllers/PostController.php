@@ -29,6 +29,7 @@ class PostController extends Controller
      */
     public function index()
     {
+        $users = DB::select('select * from `users`');
         return view('form.form');
     }
 
